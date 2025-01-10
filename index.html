@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body style="background-color: black;">
-    <script src="main.js"></script>
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background-color: grey">
+    <form id="form">
+      <p id="firstNameDesc">Ismingizni kriting:</p>
+      <input id="firstName" type="text" placeholder="Ism" />
+      <p id="secondNameDesc">Familyangizni kriting:</p>
+      <input id="secondName" type="text" placeholder="Familya" />
+      <p id="birthDateDesc">Tug`ulgan sanangizni kriting:</p>
+      <input id="birthDate" type="date" />
+      <p id="numberDesc">telefon raqamingizni kriting:</p>
+      <input id="number" type="text" placeholder="telefon raqam" />
+      <p id="emailDesc">Email pochtangizni krirting:</p>
+      <input id="email" type="text" placeholder="Email" />
+      <p id="passwordDesc">Parol kriting:</p>
+      <input id="password" type="password" placeholder="Password" />
+      <p id="checkPassDesc">Kritilgan parolni tasdiqlang:</p>
+      <input id="checkPass" type="password" placeholder="Password" />
+      <p id="addressDesc">Manzlingizni kriting:</p>
+      <textarea id="address" placeholder="Addres"></textarea>
+      <p id="postcodeDesc">Pocta index kriting:</p>
+      <input id="postcode" type="text" />
+      <p id="genderDesc">Jinsingizni tanlang:</p>
+      <select id="gender">
+        <option value="" disabled selected hidden></option>
+        <option value="male">Og`il bola</option>
+        <option value="female">Qiz bola</option>
+      </select>
+      <p id="hobbyDesc">Nmalarga qiziqishingizni kriting:</p>
+      <input id="hobby" type="text" />
+      <p id="agreementDesc">Bizning shrtlar blan tanishib chiqing:</p>
+      <label>
+        <input style="display: inline-block;" type="checkbox" id="agreement" name="agreement" />
+        Qoidalarga roziman
+      </label>
+      <button style="display: block;" id="sendForm" disabled>Formani jonatish</button>
+    </form>
+    <script src="js/main.js" type="module"></script>
+  </body>
 </html>
