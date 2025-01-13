@@ -8,39 +8,68 @@
   </head>
   <body style="background-color: grey">
     <form id="form">
+<!-- Foydalanuvchining ismi -->
       <p id="firstNameDesc">Ismingizni kriting:</p>
       <input id="firstName" type="text" placeholder="Ism" />
+<!-- Foydalanuvchining familiyasi-->
       <p id="secondNameDesc">Familyangizni kriting:</p>
       <input id="secondName" type="text" placeholder="Familya" />
+<!-- Foydalanuvchining tugilgan sanasi  -->
       <p id="birthDateDesc">Tug`ulgan sanangizni kriting:</p>
       <input id="birthDate" type="date" />
+<!-- Foydalanuvchining telefon raqami -->
       <p id="numberDesc">telefon raqamingizni kriting:</p>
       <input id="number" type="text" placeholder="telefon raqam" />
+<!-- Foydalanuvchining elektron pochtasi -->
       <p id="emailDesc">Email pochtangizni krirting:</p>
       <input id="email" type="text" placeholder="Email" />
+<!-- Foydalanuvchining login uchun paroli -->
       <p id="passwordDesc">Parol kriting:</p>
       <input id="password" type="password" placeholder="Password" />
+
       <p id="checkPassDesc">Kritilgan parolni tasdiqlang:</p>
       <input id="checkPass" type="password" placeholder="Password" />
+<!-- Foydalanuvchining manzili -->
       <p id="addressDesc">Manzlingizni kriting:</p>
       <textarea id="address" placeholder="Addres"></textarea>
+<!-- Foydalanuvchining pochta addressi -->
       <p id="postcodeDesc">Pocta index kriting:</p>
       <input id="postcode" type="text" />
+<!-- Foydalanuvchining jinsi -->
       <p id="genderDesc">Jinsingizni tanlang:</p>
       <select id="gender">
         <option value="" disabled selected hidden></option>
         <option value="male">Og`il bola</option>
         <option value="female">Qiz bola</option>
       </select>
+<!-- Foydalanuvchining hobbisi -->
       <p id="hobbyDesc">Nmalarga qiziqishingizni kriting:</p>
       <input id="hobby" type="text" />
+<!-- CheckBox -->
       <p id="agreementDesc">Bizning shrtlar blan tanishib chiqing:</p>
       <label>
         <input style="display: inline-block;" type="checkbox" id="agreement" name="agreement" />
         Qoidalarga roziman
       </label>
+<!-- Button -->
       <button style="display: block;" id="sendForm" disabled>Formani jonatish</button>
     </form>
+
+    <div class="13-masala">
+      <input id="name" type="text">
+      <button id="button">jonatish</button>
+      <div id="showName"></div>
+    </div>
+    <div class="14-masala">
+      <p id="editedName">Abdulxamid Sultanov</p>
+      <input style="display: none;" id="hidden" type="text">
+      <button id="edit">Tahrirlash</button>
+    </div>
+    <div class="15-masala">
+      <input type="" name="" id="pass">
+      <input type="password" name="" id="checkPassword">
+      <button></button>
+    </div>
     <script src="js/main.js" type="module"></script>
   </body>
 </html>

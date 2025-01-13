@@ -1,3 +1,5 @@
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 1-vazifa >>>>>>>>>>>>>>>>>>>>>>>>>>
+
 import {
   validateFirstName,
   validateSecondName,
@@ -71,7 +73,7 @@ form &&
           birthDateDesc.textContent = "Tug`ulgan sanangizni kriting:";
         } else {
           birthDateDesc.style.color = "red";
-          birthDateDesc.textContent = checkYearsOld(birthDate)
+          birthDateDesc.textContent = checkYearsOld(birthDate);
         }
       });
 
@@ -264,72 +266,149 @@ form &&
       validateCheckbox(agreement) === true,
     ];
     if (validations.every((isValid) => isValid)) {
-      btn.disabled = false; // Активировать кнопку
+      btn.disabled = false; 
     } else {
       event.preventDefault();
-      btn.disabled = true; // Деактивировать кнопку
+      btn.disabled = true; 
     }
   });
 
+// <<<<<<<<<<<<<<<<<<<<<< 2-vazifa >>>>>>>>>>>>>>>>>>>>>>>>
+
 // ============
 // 13-masala:
-//
+/*Foydalanuvchi Ismini Ko‘rsatish
+Vazifa: Formada bir matnli input va bir tugma bo‘lsin. Foydalanuvchi inputga o‘z ismini yozib, tugmani bossa, ismi sahifada alohida div element ichida ko‘rsatiladi.
+Ishlatiladigan mavzular: createElement, append, value. */
 
+const input = document.getElementById("name");
+const btnToSend = document.getElementById("button");
+const div = document.getElementById("showName");
+const errorMessage = document.createElement("p");
+errorMessage.style.color = "red";
+errorMessage.textContent =
+  "*Ismni to`g`ri kiriting. Kamida 2 ta harf bo`lishi kerak va faqat lotin harflaridan foydalaning.";
+btnToSend &&
+  btnToSend.addEventListener("click", () => {
+    let check = validateFirstName(input);
+    if (check === true) {
+      div.textContent = input.value;
+    } else {
+      input.before(errorMessage);
+    }
+  });
 // ============
 // 14-masala:
-//
+/*Shaxsiy Profilni O‘zgartirish
+Vazifa: Sahifada ism va familiya yozilgan matnli div bo‘lsin. Yonida "Tahrirlash" tugmasi bo‘lsin. Tugma bosilganda, matn inputga o‘zgaradi va foydalanuvchi yangi qiymat kiritishi mumkin. "Saqlash" tugmasi bosilgandan so‘ng, matn inputdan o‘qilib, yana div ko‘rinishida aks etadi.
+Ishlatiladigan mavzular: replaceChild, value. */
 
+const editBtn = document.getElementById("edit");
+const hiddenInput = document.getElementById("hidden");
+const editedName = document.getElementById("editedName");
+editBtn.dataset.action = "edit";
+editBtn &&
+  editBtn.addEventListener("click", function () {
+    let check = validateFirstName(hiddenInput);
+
+    if (editBtn.dataset.action === "edit") {
+      hiddenInput.value = editedName.textContent;
+      editedName.style.display = "none";
+      hiddenInput.style.display = "block";
+      editBtn.dataset.action = "save";
+      errorMessage.style.display = "none";
+      hiddenInput.focus();
+    } else if (check === true) {
+      editedName.textContent = hiddenInput.value;
+      editedName.style.display = "block";
+      hiddenInput.style.display = "none";
+      editBtn.dataset.action = "edit";
+      errorMessage.style.display = "none";
+    } else {
+      errorMessage.style.display = "block";
+      hiddenInput.before(errorMessage);
+    }
+  });
 // ============
 // 15-masala:
-//
+/* Parolni Tasdiqlash
+Vazifa: Formada ikki ta parol kiritish maydoni (input) bo‘lsin: "Parol" va "Parolni tasdiqlash". Tugma bosilganda, agar ikkala parol bir-biriga teng bo‘lsa, foydalanuvchiga "Parol mos" degan xabar chiqsin, teng bo‘lmasa, "Parol mos emas" xabari chiqsin.
+Ishlatiladigan mavzular: value, alert. */
+
+
 
 // ============
 // 16-masala:
-//
+/*Rang Tanlash
+Vazifa: Formada rang kiritish maydoni (color input) bo‘lsin. Foydalanuvchi rangni tanlagandan so‘ng, sahifada yangi div yaratiladi va tanlangan rang bilan bo‘yaladi.
+Ishlatiladigan mavzular: style.backgroundColor, createElement. */
 
 // ============
 // 17-masala:
-//
+/*Shaharlar Ro‘yxati
+Vazifa: Sahifada bir matnli input va "Qo‘shish" tugmasi bo‘lsin. Foydalanuvchi inputga biror shahar nomini yozib, tugmani bossa, shahar nomi ro‘yxatga (ul ichida li) qo‘shiladi.
+Ishlatiladigan mavzular: createElement, append. */
 
 // ============
 // 18-masala:
-//
+/*Xabar Yozish
+Vazifa: Formada matnli input va "Xabar yuborish" tugmasi bo‘lsin. Tugma bosilgandan so‘ng, inputdagi matn sahifada yangi blokda ko‘rsatiladi va input maydoni tozalanadi.
+Ishlatiladigan mavzular: value, textContent. */
 
 // ============
 // 19-masala:
-//
+/*Yosh Tekshirish
+Vazifa: Formada yosh kiritish uchun input bo‘lsin. "Tekshirish" tugmasi bosilganda, foydalanuvchining yoshi 18 yoki undan yuqori bo‘lsa, sahifada "Kirishga ruxsat berildi", aks holda "Kirishga ruxsat berilmaydi" degan matn paydo bo‘lsin.
+Ishlatiladigan mavzular: value, if. */
 
 // ============
 // 20-masala:
-//
+/*Input Orqali Rang O‘zgartirish
+Vazifa: Formada matnli input bo‘lsin. Foydalanuvchi inputga "red", "green", yoki "blue" kabi rang nomini yozsa, sahifaning fon rangi o‘zgaradi.
+Ishlatiladigan mavzular: style.backgroundColor, value.
+ */
 
 // ============
 // 21-masala:
-//
+/*Foydalanuvchi Qo‘shish
+Vazifa: Formada ism va familiya kiritish uchun ikkita input bo‘lsin. "Qo‘shish" tugmasi bosilganda, kiritilgan ism va familiya ro‘yxatga qo‘shiladi.
+Ishlatiladigan mavzular: value, createElement, append.*/
 
 // ============
 // 22-masala:
-//
+/*Harflarni Hisoblash
+Vazifa: Formada bir matnli input bo‘lsin. Foydalanuvchi inputga biror so‘z kiritganda, uning uzunligi (harflar soni) sahifada ko‘rsatiladi.
+Ishlatiladigan mavzular: value, textContent. */
 
 // ============
 // 23-masala:
-//
+/* Davlatlarni Saralash
+Vazifa: Sahifada davlatlar ro‘yxati (ul) bo‘lsin. Formada "Saralash" tugmasi bo‘lsin. Tugma bosilganda, davlatlar ro‘yxati alifbo bo‘yicha qayta tartiblanadi.
+Ishlatiladigan mavzular: childNodes, sort, appendChild. */
 
 // ============
 // 24-masala:
-//
+/*Tugmani Faollashtirish
+Vazifa: Formada bir input va "Tasdiqlash" tugmasi bo‘lsin. Dastlab tugma faol bo‘lmasin (disabled). Inputga biror matn kiritilganda, tugma faollashsin.
+Ishlatiladigan mavzular: disabled, input hodisasi. */
 
 // ============
 // 25-masala:
-//
+/*Forma Tozalash
+Vazifa: Formada bir nechta input bo‘lsin (ism, familiya, email). "Tozalash" tugmasi bosilganda, barcha inputlar bo‘shatiladi.
+Ishlatiladigan mavzular: value. */
 
 // ============
 // 26-masala:
-//
+/*Foydalanuvchi Ro‘yxatini Filtrlash
+Vazifa: Foydalanuvchi ro‘yxati (ul) va qidiruv inputi bo‘lsin. Foydalanuvchi qidiruv maydoniga biror ism yozganda, faqat shu ismga mos keladigan foydalanuvchi ko‘rsatiladi, qolganlari yashiriladi.
+Ishlatiladigan mavzular: textContent, style.display. */
 
 // ============
 // 27-masala:
-//
+/*Matnni Tahrirlash
+Vazifa: Sahifada matn ko‘rinishida bir div bo‘lsin. "Tahrirlash" tugmasi bosilganda, matn inputga aylansin va foydalanuvchi matnni tahrir qilishi mumkin. "Saqlash" tugmasi bosilganda, inputdagi matn yana div ko‘rinishida aks etsin.
+Ishlatiladigan mavzular: replaceChild, value. */
 
 // ============
 // 28-masala:
